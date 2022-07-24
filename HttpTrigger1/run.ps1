@@ -36,12 +36,13 @@ if ($vmname) {
                     StatusCode = [HttpStatusCode]::NotFound
                 })
         }
-        
-        Write-Host "Success"
-        Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
-                StatusCode = [HttpStatusCode]::OK
-                Body       = $body
-            })   
+        else {
+            Write-Host "Success"
+            Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+                    StatusCode = [HttpStatusCode]::OK
+                    Body       = $body
+                })  
+        } 
     }
     catch {
         Write-Host "Caught an exception: $($_.ToString())"
