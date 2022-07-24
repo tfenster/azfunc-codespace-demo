@@ -16,7 +16,6 @@ if ($vmname) {
         $clientId = ""
         if (Test-Path env:\accesstoken) {
             $accessToken = $env:accesstoken
-            $kvAccessToken = $env:kvaccesstoken
             $clientId = $env:clientid
         }
         else {
